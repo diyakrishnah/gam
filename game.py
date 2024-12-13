@@ -9,16 +9,22 @@ def stick_game():
     print("game started")
     sticks=int(input("Enter the number of sticks :"))
     remaining_sticks=sticks
-    if (remaining_sticks) <=0:
-            print("You lose")
-    else:
-        while person1:
-            take=int(input(f"{person1} Enter your choice from 1,2 or 3:"))
-            remaining_sticks = remaining_sticks-take
-            print("no of remaining_sticks are", remaining_sticks)
-            while person2:
-                take = int(input(f"{person2} Enter your choice from 1,2 or 3:"))
-                remaining_sticks = remaining_sticks - take
-                print("no of remaining_sticks are", remaining_sticks)
-            break
+    while remaining_sticks:
+        while remaining_sticks>0:
+                 person=person1
+                 take=int(input(f"{person1} Enter your choice from 1,2 or 3:"))
+                 remaining_sticks = remaining_sticks-take
+                 print("no of remaining_sticks are", remaining_sticks)
+                 while remaining_sticks>0:
+                      person=person2
+                      take = int(input(f"{person2} Enter your choice from 1,2 or 3:"))
+                      remaining_sticks = remaining_sticks - take
+                      print("no of remaining_sticks are", remaining_sticks)
+                      break
+    while remaining_sticks<=0:
+        print(f"{person}you lost!")
+        break
+
+
+
 stick_game()
